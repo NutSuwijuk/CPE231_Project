@@ -16,7 +16,7 @@ import re
 # Create your views here.
 def index(request):
     data = {}
-    return render(request, 'invoice/index.html', data)
+    return render(request, 'Home/index.html', data)
 
 class ProductList(View):
     def get(self, request):

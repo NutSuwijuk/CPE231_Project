@@ -33,11 +33,11 @@ urlpatterns = [
     path('payment_method/list', views.PaymentMethod, name='customer_list'),
     path('customer/detail/<customer_code>', views.CustomerDetail.as_view(), name='customer_detail'),
     
-    path('invoice/list', views.InvoiceList.as_view(), name='invoice_list'),
-    path('invoice/detail/<str:pk>/<str:pk2>', views.InvoiceDetail.as_view(), name='invoice_detail'),
-    path('invoice/create', views.InvoiceCreate.as_view(), name='invoice_create'),
-    path('invoice/update', views.InvoiceUpdate.as_view(), name='invoice_update'),
-    path('invoice/delete', views.InvoiceDelete.as_view(), name='invoice_delete'),
-    path('invoice/report/<str:pk>/<str:pk2>', views.InvoiceReport.as_view(), name='invoice_report'),
+    path('Home/list', views.InvoiceList.as_view(), name='invoice_list'),
+    path('Home/detail/<str:pk>/<str:pk2>', views.InvoiceDetail.as_view(), name='invoice_detail'),
+    path('Home/create', views.InvoiceCreate.as_view(), name='invoice_create'),
+    path('Home/update', views.InvoiceUpdate.as_view(), name='invoice_update'),
+    path('Home/delete', views.InvoiceDelete.as_view(), name='invoice_delete'),
+    path('Home/report/<str:pk>/<str:pk2>', views.InvoiceReport.as_view(), name='invoice_report'),
         
 ]
