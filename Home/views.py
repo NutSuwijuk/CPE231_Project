@@ -14,9 +14,11 @@ import json
 import re
 
 # Create your views here.
-def index(request):
-    data = {}
-    return render(request, 'Home/index.html', data)
+# def index(request):
+#     # return render(request, '/Home/index.html')
+#     return JsonResponse(request)
+def Home(request):
+    return render(request, '/Home/index.html')
 
 class ProductList(View):
     def get(self, request):
