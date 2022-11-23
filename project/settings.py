@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'CPE231',
+        'NAME': 'CPE231_Project',
         'USER': 'postgres',
         # 'PASSWORD': 'P_Supakorn.46',
         # 'PASSWORD': '220125',
@@ -131,3 +131,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#Auth
+
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
