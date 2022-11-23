@@ -178,18 +178,18 @@ def ingredient(request):
 
 class StockList(View):
     def get(self, request):
-        promotions = list(Stock.objects.all().values())
+        stocks = list(Stock.objects.all().values())
         data = dict()
-        data['promotions'] = promotions
+        data['stocks'] = stocks
         response = JsonResponse(data)
         response["Access-Control-Allow-Origin"] = "*"
         return response
 
 class StockGet(View):
-    def get(self, request, promotion_code):
-        promotions = list(Stock.objects.filter(promotion_code = promotion_code).values())
+    def get(self, request, id_stock):
+        stocks = list(Stock.objects.filter(id_stock = id_stock).values())
         data = dict()
-        data['promotions'] = promotions
+        data['stocks'] = stocks
         response = JsonResponse(data)
         response["Access-Control-Allow-Origin"] = "*"
         return response        
@@ -207,11 +207,11 @@ class StockSave(View):
             ret['result'] = "error"
             return JsonResponse(ret)
 
-        promotions = list(Stock.objects.all().values())
+        stocks = list(Stock.objects.all().values())
         data = dict()
-        data['promotions'] = promotions
+        data['stocks'] = stocks
         
-        return render(request, 'form/forms_promotion.html', data)
+        return render(request, 'form/forms_stock.html', data)
 
 class StockForm(forms.ModelForm):
     class Meta:
@@ -229,16 +229,18 @@ class StockSave2(View):
         else:
             ret = dict()
             ret['result'] = "error"
-            ret['promotions'] = list()
+            ret['stocks'] = list()
             return JsonResponse(ret)
 
-        promotions = list(Stock.objects.all().values())
+        stocks = list(Stock.objects.all().values())
         data = dict()
-        data['promotions'] = promotions
+        data['stocks'] = stocks
         response = JsonResponse(data)
         response["Access-Control-Allow-Origin"] = "*"
         return response
         #return render(request, 'forms_customer.html', data)
+
+
 
 ############################ MENU ##############################
 
