@@ -7,17 +7,22 @@
     <title>{% block site_title %}{% endblock %}sign-language</title>
 </head>
 <body>
-    <!-- <header style='background-color: pink;'>
-        <a href="#">One for All<a/>
-        <a href="#">ภาษามือเพื่อการสื่อสาร</a> -->
+    <header style='background-color: pink;'>
+        {% if users.is_authenticated %}
+            <a href="#">{{user.username}}</a>
+            <a href="/users/logout">ออกจากระบบ</a>
+        {% else %}
+            <a href="/users/login">เข้าสู่ระบบ<a/>
+            <a href="#">สมัครสมาชิก</a>
+        {% endif %}
     </header>
-    <!-- <header style="background-color: lightgray;">
-        <a href='{% url 'category' %}'>หมวดหมู่</a>
-        <a href='{% url 'about' %}'>เกี่ยวกับ</a>
-    </header> -->
-    <form>
+
+    <form action="% url 'login' %" method="post">
         {% csrf_token %}
         {{ form.as_p}}
+        <p>
+            <button class="button button-primary" type="submit">เข้าสู่ระบบ</button>
+        </p>
     </form>
     <!-- <footer style="background-color: lightgray;">
         <h5>เข้าสู่ระบบ</h5>
