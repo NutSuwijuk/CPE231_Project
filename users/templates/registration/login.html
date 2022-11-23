@@ -11,10 +11,7 @@
         <a href="#">One for All<a/>
         <a href="#">ภาษามือเพื่อการสื่อสาร</a> -->
     </header>
-    <!-- <header style="background-color: lightgray;">
-        <a href='{% url 'category' %}'>หมวดหมู่</a>
-        <a href='{% url 'about' %}'>เกี่ยวกับ</a>
-    </header> -->
+
     <form>
         {% csrf_token %}
         {{ form.as_p}}
