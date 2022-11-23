@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'general',
     'users',
+    'Home',
 ]
 
 MIDDLEWARE = [
@@ -83,7 +84,7 @@ DATABASES = {
         'USER': 'postgres',
         # 'PASSWORD': 'P_Supakorn.46',
         # 'PASSWORD': '220125',
-        'PASSWORD': 'nut3044',
+        'PASSWORD': '7222',
         'HOST': 'localhost',
         'PORT': '',
     }

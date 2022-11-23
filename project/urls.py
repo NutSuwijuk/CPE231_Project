@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from Home import views
 
 # from users import views as users_views
 # from users import urls
@@ -26,4 +27,17 @@ urlpatterns = [
     # path('login/', users_views.loginPage, name='login'),
     # path('logout/', users_views.logoutUser, name='logout'),
     # path('register/', users_views.registerPage, name='register'),
+    path('', views.index, name='index'),
+    path('product/list', views.ProductList.as_view(), name='product_list'),
+    path('customer/list', views.CustomerList.as_view(), name='customer_list'),
+    path('payment_method/list', views.PaymentMethod, name='customer_list'),
+    path('customer/detail/<customer_code>', views.CustomerDetail.as_view(), name='customer_detail'),
+    
+    path('invoice/list', views.InvoiceList.as_view(), name='invoice_list'),
+    path('invoice/detail/<str:pk>/<str:pk2>', views.InvoiceDetail.as_view(), name='invoice_detail'),
+    path('invoice/create', views.InvoiceCreate.as_view(), name='invoice_create'),
+    path('invoice/update', views.InvoiceUpdate.as_view(), name='invoice_update'),
+    path('invoice/delete', views.InvoiceDelete.as_view(), name='invoice_delete'),
+    path('invoice/report/<str:pk>/<str:pk2>', views.InvoiceReport.as_view(), name='invoice_report'),
+        
 ]
