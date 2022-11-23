@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block site_title %}{% endblock %}sign-language</title>
+</head>
+<body>
+    <!-- <header style='background-color: pink;'>
+        <a href="#">One for All<a/>
+        <a href="#">ภาษามือเพื่อการสื่อสาร</a> -->
+    </header>
+    <!-- <header style="background-color: lightgray;">
+        <a href='{% url 'category' %}'>หมวดหมู่</a>
+        <a href='{% url 'about' %}'>เกี่ยวกับ</a>
+    </header> -->
+    <form>
+        {% csrf_token %}
+        {{ form.as_p}}
+    </form>
+    <!-- <footer style="background-color: lightgray;">
+        <h5>เข้าสู่ระบบ</h5>
+        <p>
+            <a href='#'>Facebook</a>
+            <a href='#'>Twitter</a>
+        </p>
+        <p>Copyright 2022 Sign_language. All right reserved.</p>
+    </footer> -->
+</body>
+</html>
